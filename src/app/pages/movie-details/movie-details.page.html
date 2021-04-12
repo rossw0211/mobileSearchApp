@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="primary" > 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{item?.Title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="item"> 
+      <ion-row>
+          <ion-col>
+              <ion-card>
+                  <ion-img [src]="item.Poster" class="info-img">{{item.Poster}}</ion-img> 
+              </ion-card>
+          </ion-col>
+          <ion-col >
+              <div class="title-btns">
+                  <ion-row>
+                      <ion-card-title></ion-card-title>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col> 
+                              <p>Rating: {{item?.Rated}}</p>
+                              <p>Score: {{item?.imdbRating}}</p>
+                              <p>Director: {{item?.Director}}</p> 
+                              <p>Country: {{item.Country}}</p> 
+                      </ion-col>
+                  </ion-row> 
+                  <ion-row>
+                      <ion-col>
+                          <ion-button size="medium" >
+                              <ion-icon button="true" name="add-outline"></ion-icon>
+                          </ion-button>
+                      </ion-col>
+                      <ion-col>
+                          <ion-button size="medium">
+                              <ion-icon button="true" name="star-outline"></ion-icon>
+                          </ion-button>
+                      </ion-col>
+                  </ion-row>
+              </div>                                                  
+          </ion-col>
+      </ion-row>
+      <ion-row > 
+              <ion-item>
+                  <ion-text>
+                      <ion-label>
+                          <h1>Synopsis -</h1>  
+                      </ion-label> 
+                      <p>
+                          {{item.Plot}}
+                      </p>
+                  </ion-text> 
+              </ion-item>                                
+      </ion-row> 
+      <ion-row> 
+          <ion-col> 
+              <ion-list> 
+                  <ion-text>
+                      <ion-item>
+                         Genre: 
+                      </ion-item> 
+                      <ion-item>
+                          Released:
+                      </ion-item>
+                      <ion-item>
+                         Runtime: 
+                      </ion-item>
+                      <ion-item>
+                          Episode Count:
+                      </ion-item>
+                  </ion-text> 
+              </ion-list> 
+          </ion-col>
+          <ion-col> 
+              <ion-list> 
+                  <ion-item>
+                    {{item.Genre}}
+                  </ion-item> 
+                  <ion-item id="info-status">
+                      {{item.Released}}
+                  </ion-item>
+                  <ion-item id="info-airdate">
+                     {{item.Runtime}}
+                  </ion-item>
+                  <ion-item id="info-count" >
+                      209
+                  </ion-item> 
+              </ion-list> 
+          </ion-col>
+        <ion-row > 
+            <ion-item>
+                <ion-text>
+                    <ion-label>
+                        <h1>Actors:</h1>  
+                    </ion-label>
+                    <p>
+                        {{item.Actors}}
+                    </p>
+                </ion-text> 
+            </ion-item>                                
+        </ion-row>                               
+      </ion-row> 
+      <!-- <ion-item>
+      <h3>Actors:</h3>
+      <ion-row> 
+        <ion-item>{{item.Actors}}</ion-item>
+      </ion-row>
+    </ion-item> -->
+</ion-content>
